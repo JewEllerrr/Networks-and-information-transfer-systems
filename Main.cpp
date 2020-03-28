@@ -372,17 +372,14 @@ vector<vector<bool>> error_book(int size)
 int main()
 {
 	srand(time(NULL));
-	//vector<bool> g = { 1,0,1,0,1 };
 	vector<bool> g = { 1,0,1,1 };
-	//vector<bool> e = { 0,0,1,0,1,1,0 };
-	//vector<bool> e = { 0,0,1,1,0,1,0,1 };
+	vector<bool> e = { 0,0,1,0,1,1,0 };
 	vector<bool> m = { 1,0,1,1 };
-	//vector<bool> m = { 1,0,1,0 };
 	size_t k = m.size();
-	size_t d = 3;
-	//coder_decoder(g, k, e, m);
-	//cout << endl << endl;
-	size_t l = 6; // for additional task
+	size_t d = k;
+	coder_decoder(g, k, e, m);
+	cout << endl << endl;
+	size_t l = 0; // for additional task
 	k += l;
 	vector<vector<bool>> er = error_book(k + deg(g));
 	dop(g, m, er, d, k);
