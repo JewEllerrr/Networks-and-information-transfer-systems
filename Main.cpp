@@ -1,6 +1,24 @@
 #include "Header.h"
 using namespace std;
 
+int main()
+{
+	srand(time(NULL));
+	vector<bool> g = { 1,0,1,1 };
+	vector<bool> e = { 0,0,1,1,0,1,1 };
+	vector<bool> m = { 1,1,0,1 };
+	size_t k = m.size();
+	size_t d = 3;
+	coder_decoder(g, k, e, m);
+	cout << endl << endl;
+	size_t l = 6; // for additional task
+	k += l;
+	vector<vector<bool>> er = error_book(k + deg(g));
+	dop(g, m, er, d, k);
+
+	return 0;
+}
+
 /**
  * The program generates a codeword (vector a). 
  * Based on this codeword and the error vector, a sequence (vector b) is generated at the channel output.
@@ -298,7 +316,7 @@ void dop(vector<bool> g, vector<bool> m, vector<vector<bool>> e, size_t d, size_
 	for (int i = 0; i < e.size(); i++)
 	{
 		vector<bool> b = vector_b(a, e[i]);
-		if (!sindrom(b, g) && vector_weight(e[i]) <= d-1)
+		if (!sindrom(b, g) && vector_weight(e[i]) <= d-1 && vector_weight(e[i]) != 0)
 		{
 			cout << "e = ";
 			for (int l = 0; l < e[i].size(); l++)
@@ -367,22 +385,4 @@ vector<vector<bool>> error_book(int size)
 	while (NextSet(ar, mm, n))
 		er.push_back(Print(ar, mm));
 	return er;
-}
-
-int main()
-{
-	srand(time(NULL));
-	vector<bool> g = { 1,0,1,1 };
-	vector<bool> e = { 0,0,1,0,1,1,0 };
-	vector<bool> m = { 1,0,1,1 };
-	size_t k = m.size();
-	size_t d = k;
-	coder_decoder(g, k, e, m);
-	cout << endl << endl;
-	size_t l = 0; // for additional task
-	k += l;
-	vector<vector<bool>> er = error_book(k + deg(g));
-	dop(g, m, er, d, k);
-
-	return 0;
 }
