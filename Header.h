@@ -19,4 +19,4 @@ bool sindrom(vector<bool> b, vector<bool> g);
 vector<bool> Print(int* ar, int n);
 void dop(vector<bool> g, vector<bool> m, vector<vector<bool>> e, size_t d, size_t k_l);
 bool NextSet(int* ar, int n, int m);
-vector<vector<bool>> error_book(int size, size_t d);
+vector<vector<bool>> error_book(int size);
