@@ -293,6 +293,7 @@ void dop(vector<bool> g, vector<bool> m, vector<vector<bool>> e, size_t d, size_
 	cout << " - vector a" << endl;
 
 	// takes error book and checks conditions
+	cout << "d = " << d << endl;
 	cout << "No errors (E = 0) and w(e) <= d-1, if:" << endl;
 	for (int i = 0; i < e.size(); i++)
 	{
