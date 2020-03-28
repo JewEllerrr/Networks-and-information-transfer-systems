@@ -74,6 +74,11 @@ void coder_decoder(vector<bool> g, size_t k, vector<bool> e, vector<bool> m)
 bool sindrom(vector<bool> b, vector<bool> g) 
 {
 	vector<bool> res = division(b, g);
+	
+	//for (int l = 0; l < res.size(); l++)
+	//	cout << res[l] << ' ';
+	//cout << " - sindrom" << endl;
+	
 	// check from the end
 	for (int i = res.size() - 1; i >= 0; i--)
 		if (res[i] == 1) return true;
