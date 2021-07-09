@@ -1,6 +1,12 @@
 #include "Header.h"
 using namespace std;
 
+/**
+ * Program generates a codeword (vector a). 
+ * Based on this codeword and the error vector, a sequence (vector b) is generated at the channel output.
+ * According to the adopted sequence, a decision is made about the presence of errors in the channel.
+ */
+
 int main()
 {
 	srand(time(NULL));
@@ -20,9 +26,6 @@ int main()
 }
 
 /**
- * The program generates a codeword (vector a). 
- * Based on this codeword and the error vector, a sequence (vector b) is generated at the channel output.
- * According to the adopted sequence, a decision is made about the presence of errors in the channel.
  * @param g - vector of the generating polynomial
  * @param k - the number of information symbols of the sended message m
  * @param e - error vector
